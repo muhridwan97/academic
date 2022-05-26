@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -59,20 +59,11 @@ $route['migrate/(.+)'] = 'console/migrate/$1';
 $route['automate'] = 'console/automate';
 $route['automate/(.+)'] = 'console/automate/$1';
 
-$route['training/class'] = 'training/training';
-$route['training/class/(.+)'] = 'training/training/$1';
-
-$route['training/classroom/(.+)/exercise/(.+)'] = 'training/classroom/exercise/$1/$2';
-$route['training/classroom/(.+)/exercise-result/(.+)'] = 'training/classroom/exercise_result/$1/$2';
-$route['training/classroom/(.+)/course/(.+)'] = 'training/classroom/course/$1/$2';
-$route['training/classroom/(.+)'] = 'training/classroom/course/$1';
-
 $route['privacy'] = 'legal/privacy';
 $route['agreement'] = 'legal/agreement';
 $route['cookie'] = 'legal/cookie';
 $route['sla'] = 'legal/sla';
 
-$route['skripsi'] = 'skripsi/skripsi';
 $route['skripsi/create'] = 'skripsi/skripsi/create';
 $route['skripsi/save'] = 'skripsi/skripsi/save';
 $route['skripsi/edit/(.+)'] = 'skripsi/skripsi/edit/$1';

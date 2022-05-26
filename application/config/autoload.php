@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -135,12 +135,10 @@ $autoload['language'] = array();
 $autoload['model'] = [
     'AuthorizationModel' => 'AuthorizationModel',
     'UserModel' => 'UserModel',
-	'modules/Notify' => 'Notify',
+    'modules/Notify' => 'Notify',
     'NotificationModel' => 'NotificationModel',
     'DepartmentModel' => 'DepartmentModel',
     'EmployeeModel' => 'EmployeeModel',
     'LecturerModel' => 'LecturerModel',
     'StudentModel' => 'StudentModel',
-    'SkripsiModel' => 'SkripsiModel',
-    'LogbookModel' => 'LogbookModel',
 ];
