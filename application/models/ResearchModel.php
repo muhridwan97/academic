@@ -6,6 +6,9 @@ class ResearchModel extends App_Model
     protected $table = 'researches';
     protected $tableLecturer = 'ref_lecturers';
 
+    const STATUS_ACTIVE = 'ACTIVE';
+    const STATUS_INACTIVE = 'INACTIVE';
+
     public function __construct()
     {
         if ($this->config->item('sso_enable')) {

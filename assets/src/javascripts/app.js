@@ -55,55 +55,11 @@ try {
         import("./pages/role").then(role => role.default());
     }
 
-    if ($('.form-sort-curriculum').length) {
-        import("./pages/sort-curriculum").then(sortCurriculum => sortCurriculum.default());
-    }
-
-    if ($('.form-sort-course').length) {
-        import("./pages/sort-course").then(sortCourse => sortCourse.default());
-    }
-
-    if ($('.form-sort-lesson').length) {
-        import("./pages/sort-lesson").then(sortLesson => sortLesson.default());
-    }
-
-    if ($('#form-exercise').length) {
-        import("./pages/exercise").then(exercise => exercise.default());
-    }
-
-    if ($('#classroom-wrapper').length) {
-        import("./pages/classroom").then(classroom => classroom.default());
-    }
-
     if ($('#media-viewer-wrapper').length) {
         import("./pages/media-viewer").then(mediaViewer => mediaViewer.default());
     }
-
-    if ($('#quiz-wrapper').length || $('#form-quiz').length) {
-        import("./pages/quiz").then(quiz => quiz.default());
-    }
-
-    if ($('#table-exam-exercise').length) {
-        import("./pages/exam").then(quiz => quiz.default());
-    }
-
-    if ($('#form-assignment-letter').length) {
-        import("./pages/assignment-letter").then(assignmentLetter => assignmentLetter.default());
-    }
-
-    if ($('#form-interview-permit').length) {
-        import("./pages/interview-permit").then(interviewPermit => interviewPermit.default());
-    }
-
-    if ($('#form-course-elimination').length) {
-        import("./pages/course-elimination").then(courseElimination => courseElimination.default());
-    }
-
-    if ($('#form-college-permit').length) {
-        import("./pages/college-permit").then(collegePermit => collegePermit.default());
-    }
-    if ($('#form-skripsi').length) {
-        import("./pages/skripsi").then(skripsi => skripsi.default());
+    if ($('#form-research').length) {
+        import("./pages/research").then(research => research.default());
     }
 
 } catch (e) {

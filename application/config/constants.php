@@ -126,12 +126,12 @@ defined('PERMISSION_STUDENT_CREATE') OR define('PERMISSION_STUDENT_CREATE', 'stu
 defined('PERMISSION_STUDENT_EDIT') OR define('PERMISSION_STUDENT_EDIT', 'student-edit');
 defined('PERMISSION_STUDENT_DELETE') OR define('PERMISSION_STUDENT_DELETE', 'student-delete');
 
-// Skripsi  permission
-defined('PERMISSION_SKRIPSI_VIEW') OR define('PERMISSION_SKRIPSI_VIEW', 'skripsi-view');
-defined('PERMISSION_SKRIPSI_CREATE') OR define('PERMISSION_SKRIPSI_CREATE', 'skripsi-create');
-defined('PERMISSION_SKRIPSI_EDIT') OR define('PERMISSION_SKRIPSI_EDIT', 'skripsi-edit');
-defined('PERMISSION_SKRIPSI_DELETE') OR define('PERMISSION_SKRIPSI_DELETE', 'skripsi-delete');
-defined('PERMISSION_SKRIPSI_VALIDATE') OR define('PERMISSION_SKRIPSI_VALIDATE', 'skripsi-validate');
+// Research  permission
+defined('PERMISSION_RESEARCH_VIEW') OR define('PERMISSION_RESEARCH_VIEW', 'research-view');
+defined('PERMISSION_RESEARCH_CREATE') OR define('PERMISSION_RESEARCH_CREATE', 'research-create');
+defined('PERMISSION_RESEARCH_EDIT') OR define('PERMISSION_RESEARCH_EDIT', 'research-edit');
+defined('PERMISSION_RESEARCH_DELETE') OR define('PERMISSION_RESEARCH_DELETE', 'research-delete');
+defined('PERMISSION_RESEARCH_VALIDATE') OR define('PERMISSION_RESEARCH_VALIDATE', 'research-validate');
 
 // Logbook  permission
 defined('PERMISSION_LOGBOOK_VIEW') OR define('PERMISSION_LOGBOOK_VIEW', 'logbook-view');

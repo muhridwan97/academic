@@ -9,6 +9,13 @@ class LecturerModel extends App_Model
     const STATUS_ACTIVE = 'ACTIVE';
     const STATUS_INACTIVE = 'INACTIVE';
 
+    public function __construct()
+    {
+        if ($this->config->item('sso_enable')) {
+            $this->table = env('DB_LETTER_DATABASE') . '.ref_lecturers';
+            self::$tableLecturer = env('DB_LETTER_DATABASE') . '.ref_lecturers';
+        }
+    }
     /**
      * Get base query of table.
      *
@@ -20,6 +27,6 @@ class LecturerModel extends App_Model
                 ->select([
                     'prv_users.email',
                     ])
-                ->join('prv_users','prv_users.id = ref_lecturers.id_user', 'left');
+                ->join('prv_users','prv_users.id = '.$this->table.'.id_user', 'left');
     }
 }
