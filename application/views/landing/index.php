@@ -82,56 +82,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Dr. Ibrahim, S.Pd., M.Pd.</td>
-					<td>Analisis Sikap, Kecemasan Dan Hasil Belajar Matematika Siswa</td>
-					<td>Nasional</td>
-					<td>Mandiri</td>
-					<td>2022</td>
-					<td>Nasional</td>
-					<td><a href="http://jurnal.una.ac.id/index.php/jmp/article/view/2106">http://jurnal.una.ac.id/index.php/jmp/article/view/2106</a></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Dr. Ibrahim, S.Pd., M.Pd.</td>
-					<td>Perbandingan Cara Belajar Siswa dari Sekolah Pondok dan Sekolah Negeri Terhadap Hasil Belajar</td>
-					<td>Nasional</td>
-					<td>Mandiri</td>
-					<td>2022</td>
-					<td>Nasional</td>
-					<td><a href="https://jonedu.org/index.php/joe/article/view/423">https://jonedu.org/index.php/joe/article/view/423</a></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Dr. Ibrahim, S.Pd., M.Pd.</td>
-					<td>Keterampilan Berpikir Matematis Tingkat Tinggi Siswa Madrasah Aliyah Ditinjau dari Gender dan Status Sekolah</td>
-					<td>Nasional</td>
-					<td>Mandiri</td>
-					<td>2022</td>
-					<td>Nasional</td>
-					<td><a href="https://fkip.ummetro.ac.id/journal/index.php/matematika/article/view/4171">https://fkip.ummetro.ac.id/journal/index.php/matematika/article/view/4171</a></td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Retno Aliyatul Fikroh; Titah Nor Fahmi </td>
-					<td>Pengembangan Modul Bermuatan Multirepresentasi pada Materi Hidrokarbon untuk SMA/MA</td>
-					<td>Nasional </td>
-					<td>Mandiri </td>
-					<td>2022</td>
-					<td>Nasional S3</td>
-					<td><a href="https://journal.unnes.ac.id/nju/index.php/JIPK/article/view/30116">https://journal.unnes.ac.id/nju/index.php/JIPK/article/view/30116</a></td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>Muhammad Zamhari, S.Pd.Si., M.Sc.</td>
-					<td>Pengembangan Cacing Kimia sebagai Media Pembelajaran Kimia Berbasis Android pada Materi Larutan</td>
-					<td>Nasional </td>
-					<td>Mandiri</td>
-					<td>2022</td>
-					<td>Nasional S3</td>
-					<td><a href="https://journal.unnes.ac.id/nju/index.php/JIPK/article/view/29921">https://journal.unnes.ac.id/nju/index.php/JIPK/article/view/29921</a></td>
-				</tr>
+				<?php foreach ($data['researches'] as $key => $research) : ?>
+					<tr>
+						<td><?= $key+1 ?></td>
+						<td><?= $research['lecturer_name'] ?></td>
+						<td><?= $research['research_title'] ?></td>
+						<td><?= $research['research_type'] ?></td>
+						<td><?= $research['source_of_funds'] ?></td>
+						<td><?= $research['year'] ?></td>
+						<td><?= $research['journal_accreditation'] ?></td>
+						<td><a href="<?= if_empty($research['journal_link'],'#')?>"><?= if_empty($research['journal_link'],'#') ?></a></td>
+					</tr>
+				<?php endforeach; ?>
 			</tbody>
 		</table>
 		<a href="<?= base_url('/landing/research') ?>">
@@ -155,63 +117,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>karmanto</td>
-					<td>Pelatihan Sertifikasi Calon Kepala Laboratorium IPA Sekolah</td>
-					<td>Daffam Hotel Seturan Yogyakarta</td>
-					<td>BLU UIN Sunan Kalijaga</td>
-					<td>2019</td>
-					<td><a href="Sertifikat.html">Sertifikat</a></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Khamidinal, M.Si </td>
-					<td>Penyuluhan sertifikasi halal dan hygieniis pangan.</td>
-					<td>PT Pringsewu Cemerlang Restoran, Jl. Magelang KM 9. Yogyakarta.</td>
-					<td>MUI</td>
-					<td>2018</td>
-					<td><a href="-.html">-</a></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Khamidinal, M.Si</td>
-					<td>Penyuluhan sertifikasi halal dan hygienis pangan</td>
-					<td>CV Mitra Mandiri Bumbu Marinasi Mantub baru, Baturetno, Banguntapan, Bantul.</td>
-					<td>MUI</td>
-					<td>2018</td>
-					<td><a href="-.html">-</a></td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Khamidinal, M.Si</td>
-					<td>Penyuluhan sertifikasi halal dan hygienis pangan.</td>
-					<td>Tiga Mutiara Cake & Bakery Jl. Imogiri Barat KM 9,8 Ngentak Timbulharjo, Sewon, Bantul.</td>
-					<td>MUI</td>
-					<td>2018</td>
-					<td><a href="-.html">-</a></td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>Khamidinal, M.Si</td>
-					<td>Penyuluhan sertifikasi halal dan hygienis pangan.</td>
-					<td>PT Gujati 59 Utama Jamu. Jl. Raya Solo – Wonogiri Km 26,5 Nguter, Sukoharjo, Jateng.</td>
-					<td>MUI</td>
-					<td>2018</td>
-					<td><a href="-.html">-</a></td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>Khamidinal, M.Si</td>
-					<td>Penyuluhan sertifikasi halal dan hygienis pangan. </td>
-					<td>Griya Coklat Nglanggeran, Nglanggeran, Patuk, Gunung Kidul.</td>
-					<td>MUI</td>
-					<td>2018</td>
-					<td><a href="-.html">-</a></td>
-				</tr>
+				
+			<?php foreach ($data['devotions'] as $key => $devotion) : ?>
+					<tr>
+						<td><?= $key+1 ?></td>
+						<td><?= $devotion['lecturer_name'] ?></td>
+						<td><?= $devotion['activity'] ?></td>
+						<td><?= $devotion['location'] ?></td>
+						<td><?= $devotion['source_of_funds'] ?></td>
+						<td><?= $devotion['year'] ?></td>
+						<td><a href="<?= if_empty($devotion['proof_link'],'#')?>"><?= !empty($devotion['proof_link'])? 'Sertifikat': '-' ?></a></td>
+					</tr>
+				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<a href="welcome/pengabdian/index.html">
+		<a href="<?= base_url('/landing/devotion') ?>">
 			<button class="btn btn-primary"><b>SELENGKAPNYA </b><i class="glyphicon glyphicon glyphicon-hand-right" style="margin-left: 5px"></i></button>
 		</a>
 	</div>

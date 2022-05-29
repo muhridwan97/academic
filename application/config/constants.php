@@ -133,12 +133,12 @@ defined('PERMISSION_RESEARCH_EDIT') OR define('PERMISSION_RESEARCH_EDIT', 'resea
 defined('PERMISSION_RESEARCH_DELETE') OR define('PERMISSION_RESEARCH_DELETE', 'research-delete');
 defined('PERMISSION_RESEARCH_VALIDATE') OR define('PERMISSION_RESEARCH_VALIDATE', 'research-validate');
 
-// Logbook  permission
-defined('PERMISSION_LOGBOOK_VIEW') OR define('PERMISSION_LOGBOOK_VIEW', 'logbook-view');
-defined('PERMISSION_LOGBOOK_CREATE') OR define('PERMISSION_LOGBOOK_CREATE', 'logbook-create');
-defined('PERMISSION_LOGBOOK_EDIT') OR define('PERMISSION_LOGBOOK_EDIT', 'logbook-edit');
-defined('PERMISSION_LOGBOOK_DELETE') OR define('PERMISSION_LOGBOOK_DELETE', 'logbook-delete');
-defined('PERMISSION_LOGBOOK_VALIDATE') OR define('PERMISSION_LOGBOOK_VALIDATE', 'logbook-validate');
+// Devotion  permission
+defined('PERMISSION_DEVOTION_VIEW') OR define('PERMISSION_DEVOTION_VIEW', 'devotion-view');
+defined('PERMISSION_DEVOTION_CREATE') OR define('PERMISSION_DEVOTION_CREATE', 'devotion-create');
+defined('PERMISSION_DEVOTION_EDIT') OR define('PERMISSION_DEVOTION_EDIT', 'devotion-edit');
+defined('PERMISSION_DEVOTION_DELETE') OR define('PERMISSION_DEVOTION_DELETE', 'devotion-delete');
+defined('PERMISSION_DEVOTION_VALIDATE') OR define('PERMISSION_DEVOTION_VALIDATE', 'devotion-validate');
 
 // Repository  permission
 defined('PERMISSION_REPOSITORY_VIEW') OR define('PERMISSION_REPOSITORY_VIEW', 'repository-view');

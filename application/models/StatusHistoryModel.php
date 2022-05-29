@@ -10,7 +10,7 @@ class StatusHistoryModel extends App_Model
     const TYPE_EXAM_EXERCISE = 'exam-exercise';
     
     const TYPE_RESEARCH = 'research';
-    const TYPE_LOGBOOK = 'logbook';
+    const TYPE_DEVOTION = 'devotion';
 
     /**
      * Get base query of table.

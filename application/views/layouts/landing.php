@@ -63,7 +63,9 @@
 <div id="single-post">
     <div id="single-post-inner" class="container">
         <?php $this->load->view($page, $data) ?>
+        <?php if($page != 'landing/index'): ?>
         <?php $this->load->view('layouts/landing/_sidebar') ?>
+        <?php endif; ?>
     </div>
 </div>
 

@@ -2,7 +2,8 @@
 	<div class="container">
 		<div id="nav-header-up" class="navbar-header">
 			<div id="navbar-title" class="navbar-brand" href="#">
-				<i class="glyphicon glyphicon-book icon-navbar-up"></i><b>AKADEMIK MAHASISWA PFIS UIN SUNAN KALIJAGA</b>
+			<a href="<?= base_url() ?>"><i class="glyphicon glyphicon-book icon-navbar-up"></i></a><b>
+				AKADEMIK MAHASISWA PFIS UIN SUNAN KALIJAGA</b>
 			</div>
 
 		</div>
@@ -12,8 +13,7 @@
 	<div class="container">
 		<div class="navbar-header" style="width: 100%;padding-top:29px;">
 			<div id="navbar-kiri" class="navbar-brand col-sm-7">
-				<div class="col-sm-2 col-xs-4 gambar" style="text-align: center;">
-					<img src="<?= base_url('assets/img/logo-uin.png') ?>" style="float: left;" class="img-responsive">
+				<div class="col-sm-2 col-xs-4 gambar" style="text-align: center;"><img src="<?= base_url('assets/img/logo-uin.png') ?>" style="float: left;" class="img-responsive">
 				</div>
 				<div class="col-sm-10 col-xs-8 isi-logo" style="text-align: left;">
 					<h2 style="color: #fff; font-family: myf;float: left;margin-bottom: 0px;margin-top: 0px">PENDIDIKAN FISIKA</h2>
@@ -46,7 +46,7 @@
 			<div class="collapse navbar-collapse dropdown" id="myNavbar">
 				<div class="col-sm-12" id="wrap-putih">
 					<ul class="nav navbar-nav navbar-left menu-nav-bottom">
-						<li><a href="http://pkim.uin-suka.ac.id/"><i class="glyphicon glyphicon-home" style="margin-right:5px"></i>Home</a> </li>
+						<li><a href="http://pfis.uin-suka.ac.id/"><i class="glyphicon glyphicon-home" style="margin-right:5px"></i>Home</a> </li>
 
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">IDENTITAS <span class="caret"></span></a>
@@ -86,8 +86,8 @@
 										Penelitian & Pengabdian</a>
 
 									<ul class="dropdown-menu">
-										<li><a href="welcome/pengabdian/index.html">Pengabdian</a></li>
-										<li><a href="welcome/penelitian/index.html">Penelitian</a></li>
+										<li><a href="<?= base_url('/landing/devotion') ?>">Pengabdian</a></li>
+										<li><a href="<?= base_url('/landing/research') ?>">Penelitian</a></li>
 									</ul>
 								</li>
 							</ul>

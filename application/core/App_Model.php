@@ -201,6 +201,10 @@ class App_Model extends CI_Model
             $baseQuery->order_by($this->table . '.' . $this->id, 'desc');
         }
 
+        if (key_exists('limit', $filters) && !empty($filters['limit'])) {
+            $baseQuery->limit($filters['limit']);
+        }
+
         $data = $baseQuery->get()->result_array();
 
         $this->db->flush_cache();
