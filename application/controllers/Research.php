@@ -74,10 +74,9 @@ class Research extends App_Controller
     {
         AuthorizationModel::mustAuthorized(PERMISSION_RESEARCH_VIEW);
 
-        $skripsi = $this->skripsi->getById($id);
-        $logbooks = $this->logbook->getBySkripsiId($id);
+        $research = $this->research->getById($id);
 
-        $this->render('skripsi/view', compact('skripsi', 'logbooks'));
+        $this->render('research/view', compact('research'));
     }
 
     /**
@@ -114,6 +113,7 @@ class Research extends App_Controller
             $year = $this->input->post('year');
             $journalAccreditation = $this->input->post('journal_accreditation');
             $journalLink = $this->input->post('journal_link');
+            $description = $this->input->post('description');
 
             $lecturer = $this->lecturer->getById($lecturerId);
             $save = $this->research->create([
@@ -124,6 +124,7 @@ class Research extends App_Controller
                 'year' => $year,
                 'journal_accreditation' => $journalAccreditation,
                 'journal_link' => $journalLink,
+                'description' => $description,
             ]);
 
             if ($save) {
@@ -136,21 +137,21 @@ class Research extends App_Controller
     }
 
     /**
-     * Show edit Skripsi form.
+     * Show edit Research form.
      * @param $id
      */
     public function edit($id)
     {
         AuthorizationModel::mustAuthorized(PERMISSION_RESEARCH_EDIT);
 
-        $skripsi = $this->skripsi->getById($id);
-        $students = $this->student->getAll(['status'=> StudentModel::STATUS_ACTIVE]);
+        $research = $this->research->getById($id);
+        $lecturers = $this->lecturer->getAll(['status'=> StudentModel::STATUS_ACTIVE]);
 
-        $this->render('skripsi/edit', compact('students', 'skripsi'));
+        $this->render('research/edit', compact('lecturers', 'research'));
     }
 
     /**
-     * Save new Skripsi data.
+     * Save new Research data.
      * @param $id
      */
     public function update($id)
@@ -158,29 +159,39 @@ class Research extends App_Controller
         AuthorizationModel::mustAuthorized(PERMISSION_RESEARCH_EDIT);
 
         if ($this->validate($this->_validation_rules($id))) {
-            $studentId = $this->input->post('student');
-            $judul = $this->input->post('judul');
-            $pembimbingId = $this->input->post('id_pembimbing');
+            $lecturerId = $this->input->post('lecturer');
+            $researchTitle = $this->input->post('research_title');
+            $researchType = $this->input->post('research_type');
+            $sourceOfFunds = $this->input->post('source_of_funds');
+            $year = $this->input->post('year');
+            $journalAccreditation = $this->input->post('journal_accreditation');
+            $journalLink = $this->input->post('journal_link');
+            $description = $this->input->post('description');
 
-            $skripsi = $this->skripsi->getById($id);
+            $research = $this->research->getById($id);
 
-            $save = $this->skripsi->update([
-                'id_student' => $studentId,
-                'id_lecturer' => if_empty($pembimbingId, null),
-                'judul' => $judul,
+            $save = $this->research->update([
+                'id_lecturer' => $lecturerId,
+                'research_title' => $researchTitle,
+                'research_type' => $researchType,
+                'source_of_funds' => $sourceOfFunds,
+                'year' => $year,
+                'journal_accreditation' => $journalAccreditation,
+                'journal_link' => $journalLink,
+                'description' => $description,
             ], $id);
 
             if ($save) {
-                flash('success', "Skripsi {$skripsi['nama_mahasiswa']} successfully updated", 'skripsi');
+                flash('success', "Research {$research['lecturer_name']} successfully updated", 'research');
             } else {
-                flash('danger', "Update Skripsi failed, try again of contact administrator");
+                flash('danger', "Update Research failed, try again of contact administrator");
             }
         }
         $this->edit($id);
     }
 
     /**
-     * Perform deleting Skripsi data.
+     * Perform deleting Research data.
      *
      * @param $id
      */
@@ -188,22 +199,22 @@ class Research extends App_Controller
     {
         AuthorizationModel::mustAuthorized(PERMISSION_RESEARCH_DELETE);
 
-        $skripsi = $this->skripsi->getById($id);
+        $research = $this->research->getById($id);
         // push any status absent to history
         $this->statusHistory->create([
-            'type' => StatusHistoryModel::TYPE_SKRIPSI,
+            'type' => StatusHistoryModel::TYPE_RESEARCH,
             'id_reference' => $id,
-            'status' => $skripsi['status'],
-            'description' => "Skripsi is deleted",
-            'data' => json_encode($skripsi)
+            'status' => $research['status'],
+            'description' => "Research is deleted",
+            'data' => json_encode($research)
         ]);
 
-        if ($this->skripsi->delete($id, true)) {
-            flash('warning', "Skripsi {$skripsi['nama_mahasiswa']} successfully deleted");
+        if ($this->research->delete($id, true)) {
+            flash('warning', "Research {$research['lecturer_name']} successfully deleted");
         } else {
-            flash('danger', "Delete Skripsi failed, try again or contact administrator");
+            flash('danger', "Delete Research failed, try again or contact administrator");
         }
-        redirect('skripsi');
+        redirect('research');
     }
 
     /**

@@ -23,20 +23,11 @@
                                     <option value="created_at"<?= set_select('sort_by', 'created_at', get_url_param('sort_by') == 'created_at') ?>>
                                         CREATED AT
                                     </option>
-                                    <option value="no_employee"<?= set_select('sort_by', 'no_employee', get_url_param('sort_by') == 'no_employee') ?>>
-                                        NO EMPLOYEE
+                                    <option value="no_lecturer"<?= set_select('sort_by', 'no_lecturer', get_url_param('sort_by') == 'no_lecturer') ?>>
+                                        NO LECTURER
                                     </option>
                                     <option value="name"<?= set_select('sort_by', 'name', get_url_param('sort_by') == 'name') ?>>
                                         NAME
-                                    </option>
-                                    <option value="position"<?= set_select('sort_by', 'position', get_url_param('sort_by') == 'position') ?>>
-                                        POSITION
-                                    </option>
-                                    <option value="position_level"<?= set_select('sort_by', 'position_level', get_url_param('sort_by') == 'position_level') ?>>
-                                        LEVEL
-                                    </option>
-                                    <option value="department"<?= set_select('sort_by', 'department', get_url_param('sort_by') == 'department') ?>>
-                                        DEPARTMENT
                                     </option>
                                     <option value="status"<?= set_select('sort_by', 'status', get_url_param('sort_by') == 'status') ?>>
                                         STATUS

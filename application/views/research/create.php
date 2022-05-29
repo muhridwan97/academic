@@ -63,6 +63,12 @@
                         value="<?= set_value('journal_link') ?>" placeholder="Link jurnal">
                 <?= form_error('journal_link') ?>
             </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" maxlength="500"
+                          placeholder="Enter description"><?= set_value('description') ?></textarea>
+                <?= form_error('description') ?>
+            </div>
 
             <div class="d-flex justify-content-between mt-3">
                 <button onclick="history.back()" type="button" class="btn btn-light">Back</button>

@@ -91,7 +91,7 @@
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item btn-delete" href="#modal-delete" data-toggle="modal"
                                             data-id="<?= $research['id'] ?>" data-label="<?= $research['research_title'] ?>" data-title="Research"
-                                            data-url="<?= site_url('research/research/delete/' . $research['id']) ?>">
+                                            data-url="<?= site_url('research/delete/' . $research['id']) ?>">
                                             <i class="mdi mdi-trash-can-outline mr-2"></i> Delete
                                         </a>
                                     <?php endif; ?>
