@@ -57,7 +57,9 @@
     });
 </script>
 <!-- Page Content -->
-<?php $this->load->view('layouts/landing/_header') ?>
+
+<?php $data['identities'] = $this->identity->getAll();?>
+<?php $this->load->view('layouts/landing/_header', $data) ?>
 
 <?php $this->load->view('partials/_alert') ?>
 <div id="single-post">

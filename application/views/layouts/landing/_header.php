@@ -51,12 +51,14 @@
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">IDENTITAS <span class="caret"></span></a>
 							<ul class="dropdown-menu listss69">
-								<li><a href="https://drive.google.com/file/d/1bIUmx2b1cPrZEy5HJK3-4FF-0QHL2jVA/view?usp=sharing">Leafet</a></li>
-								<li><a href="https://drive.google.com/file/d/1WLNefHlbITdwwU0_y78HQv-QUwOck-u1/view?usp=sharing">Brosur Versi Inggris</a></li>
-								<li><a href="https://drive.google.com/file/d/1etFn4zwaw2Ht4Z2Ro-K_fMYKJcLuCMwx/view?usp=sharing">Brosur Versi Indonesia</a></li>
-								<li><a href="welcome/halaman/55.html">Visi-Misi</a></li>
-								<li><a href="welcome/halaman/54.html">Learning Outcome</a></li>
-								<li><a href="welcome/halaman/53.html">Profil Lulusan</a></li>
+								<?php foreach ($identities as $key => $identity) : ?>
+									<?php if($identity['is_link']): ?>
+										
+										<li><a href="<?= $identity['description'] ?>" target="_blank"><?= $identity['name'] ?></a></li>
+									<?php else: ?>
+										<li><a href="<?= base_url().'landing/'.$identity['slug'] ?>"><?= $identity['name'] ?></a></li>
+									<?php endif; ?>
+								<?php endforeach; ?>
 							</ul>
 						</li>
 
@@ -64,7 +66,7 @@
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">DOSEN <span class="caret"></span></a>
 							<ul class="dropdown-menu listss70">
-								<li><a href="welcome/list_post/4.html">Review Kurikulum</a></li>
+								<li><a href="<?= base_url('/landing/review-curriculum')?>">Review Kurikulum</a></li>
 								<li class="dropdown-submenu">
 									<a href="welcome/halaman/31.html">
 										Dosen Prodi</a>

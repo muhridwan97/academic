@@ -1,6 +1,6 @@
 <div class="col-md-9 list-into-single">
 	<div>
-		<p class="list-page-single"><a href="../../index.html">Home</a></p>>><p class="list-page-single"><a href="#">Penelitian</a></p>
+		<p class="list-page-single"><a href="<?= base_url()?>">Home</a></p>>><p class="list-page-single"><a href="#">Penelitian</a></p>
 	</div>
 </div>
 <div class="col-md-9 single-post-posts" style="padding-bottom: 20px;padding-left: 25px;padding-right:25px">
