@@ -37,12 +37,27 @@ class ReviewCurriculumModel extends App_Model
     }
 
     //ambil data mahasiswa dari database
-    function get_review_curriculum_list($limit, $start)
+    function get_review_curriculum_list($filters)
     {
-        $query = $this->getBaseQuery()
-                ->where($this->table . '.is_deleted', false)
-                ->limit($limit, $start)->get()->result_array();
-        return $query;
+        $limit = $filters['limit'];
+        $start = $filters['start'];   
+		// print_debug($filters);
+        $baseQuery = $this->getBaseQuery();
+        if (key_exists('search', $filters) && !empty($filters['search'])) {
+            foreach ($this->filteredFields as $filteredField) {
+                if ($filteredField == '*') {
+                    $fields = $this->db->list_fields($this->table);
+                    foreach ($fields as $field) {
+                        $baseQuery->or_having($this->table . '.' . $field . ' LIKE', '%' . trim($filters['search']) . '%');
+                    }
+                } else {
+                    $baseQuery->or_having($filteredField . ' LIKE', '%' . trim($filters['search']) . '%');
+                }
+            }
+        }
+        $baseQuery->where($this->table . '.is_deleted', false);
+        $data = $baseQuery->limit($limit, $start)->get()->result_array();
+        return $data;
     }
 
     /**

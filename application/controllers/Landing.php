@@ -13,6 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @property TracerStudyModel $tracerStudy
  * @property DocumentModel $document
  * @property LaboratoryModel $laboratory
+ * @property ContentModel $content
  * Class Dashboard
  */
 class Landing extends App_Controller
@@ -35,6 +36,7 @@ class Landing extends App_Controller
 		$this->load->model('TracerStudyModel', 'tracerStudy');
 		$this->load->model('DocumentModel', 'document');
 		$this->load->model('LaboratoryModel', 'laboratory');
+		$this->load->model('ContentModel', 'content');
 
         $this->load->library('pagination');
 		$this->setFilterMethods([
@@ -58,6 +60,8 @@ class Landing extends App_Controller
 			'ppm_kelas_xi' => 'GET',
 			'ppm_kelas_xii' => 'GET',
 			'rps_pilihan' => 'GET',
+			'content' => 'GET',
+			'search' => 'GET',
 		]);
 	}
 
@@ -146,8 +150,10 @@ class Landing extends App_Controller
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
  
+		$filters['limit'] = $config["per_page"];
+		$filters['start'] = $data['page'];
         //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
-        $data['data'] = $this->reviewCurriculum->get_review_curriculum_list($config["per_page"], $data['page']);           
+        $data['data'] = $this->reviewCurriculum->get_review_curriculum_list($filters);   
  
         $data['pagination'] = $this->pagination->create_links();
 		
@@ -245,6 +251,52 @@ class Landing extends App_Controller
 	public function content($slug)
 	{
 		$content = $this->content->getBy(['slug'=> $slug],true);
-		$this->render('landing/content', compact('study'));
+		$this->render('landing/content', compact('content'));
+	}
+
+	public function search()
+	{
+		$filters = ['search' => get_url_param('cari', 1)];
+		$searches = $this->reviewCurriculum->getAll($filters);
+		//konfigurasi pagination
+        $config['base_url'] = site_url('landing/review_curriculum'); //site url
+        $config['total_rows'] = count($searches); //total row
+        $config['per_page'] = 5 ;  //show record per halaman
+        $config["uri_segment"] = 3;  // uri parameter
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+ 
+        // Membuat Style pagination untuk BootStrap v4
+      	$config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+ 
+        $this->pagination->initialize($config);
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+ 
+		$filters['limit'] = $config["per_page"];
+		$filters['start'] = $data['page'];
+        //panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
+        $data['data'] = $this->reviewCurriculum->get_review_curriculum_list($filters);           
+ 
+        $data['pagination'] = $this->pagination->create_links();
+		
+		$data['search'] = get_url_param('cari', 1);
+		$this->render('landing/search', $data);
 	}
 }

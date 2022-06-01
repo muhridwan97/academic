@@ -32,7 +32,7 @@
           </div> -->
 				<div class="col-sm-12" style="text-align: right;padding:0px">
 					<!-- <p class="text-contact"><i class="glyphicon glyphicon-home" style="margin-right:5px"></i>Jl. Marsda Adisucipto Yogyakarta</p> -->
-					<form action="https://akademik.pkimuin-suka.ac.id/hasil_search" method="GET">
+					<form action="<?= base_url('landing/search')?>" method="GET">
 						<input id="cari" type="text" name="cari" placeholder="Cari disini" style="position: relative;z-index: 999">
 
 					</form>
@@ -171,10 +171,10 @@
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">JURNAL <span class="caret"></span></a>
 							<ul class="dropdown-menu listss72">
-								<li><a href="welcome/halaman/68.html">Jurnal Difabel</a></li>
-								<li><a href="welcome/halaman/50.html">Jurnal Pendidikan Kimia</a></li>
-								<li><a href="http://ejournal.uin-suka.ac.id/tarbiyah/jtcre/index">Jurnal Prodi</a></li>
-								<li><a href="welcome/halaman/51.html">Jurnal Internasional</a></li>
+								<li><a href="<?= base_url('landing/content/'.$journals[1]['slug']) ?>"><?= $journals[1]['name'] ?></a></li>
+								<li><a href="<?= base_url('landing/content/'.$journals[2]['slug']) ?>"><?= $journals[2]['name'] ?></a></li>
+								<li><a href="<?= $journals[3]['description']?>" target="_blank"><?= $journals[3]['name'] ?></a></li>
+								<li><a href="<?= base_url('landing/content/'.$journals[4]['slug']) ?>"><?= $journals[4]['name'] ?></a></li>
 							</ul>
 						</li>
 
@@ -183,12 +183,12 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">LABORATORIUM <span class="caret"></span></a>
 							<ul class="dropdown-menu listss73">
 								<li class="dropdown-submenu">
-									<a href="welcome/halaman/11.html">
+									<a href="#">
 										Modul Praktikum</a>
 
 									<ul class="dropdown-menu">
-										<li><a href="welcome/halaman/47.html">Modul Praktikum Gasal</a></li>
-										<li><a href="welcome/halaman/48.html">Modul Praktikum Genap</a></li>
+										<li><a href="<?= base_url('landing/content/'.$laboratories[5]['slug']) ?>"><?= $laboratories[5]['name'] ?></a></li>
+										<li><a href="<?= base_url('landing/content/'.$laboratories[6]['slug']) ?>"><?= $laboratories[6]['name'] ?></a></li>
 									</ul>
 								</li>
 							</ul>
@@ -199,10 +199,10 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">TRACER STUDY <span class="caret"></span></a>
 							<ul class="dropdown-menu listss74">
 								<li><a href="<?= base_url('landing/alumni') ?>">Alumni PFIS</a></li>
-								<li><a href="https://docs.google.com/forms/d/1uqgUJ-paOflhjInvuZJiouEJMAcl5KpV3jCBwrwiN2E/edit?usp=sharing">Aduan Mahasiswa</a></li>
-								<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc6scoYeuzxO45lCDbja42GkZB0N7pnbAgpCF-hd3tTT2h2fQ/viewform?usp=sf_link">Survei Kepuasan mahasiswa</a></li>
-								<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdp5vBnyF5NZ-864FWBflIBgS1Zs2ddOAtV0hxY_xA-fnOKug/viewform">Tracer Pengguna Alumni</a></li>
-								<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfpca7aHdnyzafc2QrAZe4oJYUOIDtUYxU8q2AYNwFfLJY0dA/viewform">Tracer Alumni</a></li>
+								<li><a href="<?= $tracerStudies[7]['description']?>" target="_blank"><?= $tracerStudies[7]['name'] ?></a></li>
+								<li><a href="<?= $tracerStudies[8]['description']?>" target="_blank"><?= $tracerStudies[8]['name'] ?></a></li>
+								<li><a href="<?= $tracerStudies[9]['description']?>" target="_blank"><?= $tracerStudies[9]['name'] ?></a></li>
+								<li><a href="<?= $tracerStudies[10]['description']?>" target="_blank"><?= $tracerStudies[10]['name'] ?></a></li>
 							</ul>
 						</li>
 
@@ -210,7 +210,7 @@
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">DOKUMEN <span class="caret"></span></a>
 							<ul class="dropdown-menu listss75">
-								<li><a href="welcome/halaman/74.html">Dokumen Perkuliahan</a></li>
+								<li><a href="<?= base_url('landing/content/'.$documents[11]['slug']) ?>"><?= $documents[11]['name'] ?></a></li>
 							</ul>
 						</li>
 
