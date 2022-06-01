@@ -12,6 +12,7 @@ class StatusHistoryModel extends App_Model
     const TYPE_RESEARCH = 'research';
     const TYPE_DEVOTION = 'devotion';
     const TYPE_REVIEW_CURRICULUM = 'review-curriculum';
+    const TYPE_ALUMNI = 'alumni';
 
     /**
      * Get base query of table.

@@ -146,11 +146,11 @@ defined('PERMISSION_IDENTITY_CREATE') OR define('PERMISSION_IDENTITY_CREATE', 'i
 defined('PERMISSION_IDENTITY_EDIT') OR define('PERMISSION_IDENTITY_EDIT', 'identity-edit');
 defined('PERMISSION_IDENTITY_DELETE') OR define('PERMISSION_IDENTITY_DELETE', 'identity-delete');
 
-// Dosen permission
-defined('PERMISSION_DOSEN_VIEW') OR define('PERMISSION_DOSEN_VIEW', 'dosen-view');
-defined('PERMISSION_DOSEN_CREATE') OR define('PERMISSION_DOSEN_CREATE', 'dosen-create');
-defined('PERMISSION_DOSEN_EDIT') OR define('PERMISSION_DOSEN_EDIT', 'dosen-edit');
-defined('PERMISSION_DOSEN_DELETE') OR define('PERMISSION_DOSEN_DELETE', 'dosen-delete');
+// Study permission
+defined('PERMISSION_STUDY_VIEW') OR define('PERMISSION_STUDY_VIEW', 'study-view');
+defined('PERMISSION_STUDY_CREATE') OR define('PERMISSION_STUDY_CREATE', 'study-create');
+defined('PERMISSION_STUDY_EDIT') OR define('PERMISSION_STUDY_EDIT', 'study-edit');
+defined('PERMISSION_STUDY_DELETE') OR define('PERMISSION_STUDY_DELETE', 'study-delete');
 
 // Review_curriculum permission
 defined('PERMISSION_REVIEW_CURRICULUM_VIEW') OR define('PERMISSION_REVIEW_CURRICULUM_VIEW', 'review-curriculum-view');
@@ -158,17 +158,17 @@ defined('PERMISSION_REVIEW_CURRICULUM_CREATE') OR define('PERMISSION_REVIEW_CURR
 defined('PERMISSION_REVIEW_CURRICULUM_EDIT') OR define('PERMISSION_REVIEW_CURRICULUM_EDIT', 'review-curriculum-edit');
 defined('PERMISSION_REVIEW_CURRICULUM_DELETE') OR define('PERMISSION_REVIEW_CURRICULUM_DELETE', 'review-curriculum-delete');
 
-// Lesson permission
-defined('PERMISSION_LESSON_VIEW') OR define('PERMISSION_LESSON_VIEW', 'lesson-view');
-defined('PERMISSION_LESSON_CREATE') OR define('PERMISSION_LESSON_CREATE', 'lesson-create');
-defined('PERMISSION_LESSON_EDIT') OR define('PERMISSION_LESSON_EDIT', 'lesson-edit');
-defined('PERMISSION_LESSON_DELETE') OR define('PERMISSION_LESSON_DELETE', 'lesson-delete');
+// Content permission
+defined('PERMISSION_CONTENT_VIEW') OR define('PERMISSION_CONTENT_VIEW', 'content-view');
+defined('PERMISSION_CONTENT_CREATE') OR define('PERMISSION_CONTENT_CREATE', 'content-create');
+defined('PERMISSION_CONTENT_EDIT') OR define('PERMISSION_CONTENT_EDIT', 'content-edit');
+defined('PERMISSION_CONTENT_DELETE') OR define('PERMISSION_CONTENT_DELETE', 'content-delete');
 
-// Exercise permission
-defined('PERMISSION_EXERCISE_VIEW') OR define('PERMISSION_EXERCISE_VIEW', 'exercise-view');
-defined('PERMISSION_EXERCISE_CREATE') OR define('PERMISSION_EXERCISE_CREATE', 'exercise-create');
-defined('PERMISSION_EXERCISE_EDIT') OR define('PERMISSION_EXERCISE_EDIT', 'exercise-edit');
-defined('PERMISSION_EXERCISE_DELETE') OR define('PERMISSION_EXERCISE_DELETE', 'exercise-delete');
+// Alumni permission
+defined('PERMISSION_ALUMNI_VIEW') OR define('PERMISSION_ALUMNI_VIEW', 'alumni-view');
+defined('PERMISSION_ALUMNI_CREATE') OR define('PERMISSION_ALUMNI_CREATE', 'alumni-create');
+defined('PERMISSION_ALUMNI_EDIT') OR define('PERMISSION_ALUMNI_EDIT', 'alumni-edit');
+defined('PERMISSION_ALUMNI_DELETE') OR define('PERMISSION_ALUMNI_DELETE', 'alumni-delete');
 
 // Training permission
 defined('PERMISSION_TRAINING_MANAGE') OR define('PERMISSION_TRAINING_MANAGE', 'training-manage');

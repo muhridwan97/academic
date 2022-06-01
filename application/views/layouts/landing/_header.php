@@ -68,19 +68,12 @@
 							<ul class="dropdown-menu listss70">
 								<li><a href="<?= base_url('/landing/review-curriculum')?>">Review Kurikulum</a></li>
 								<li class="dropdown-submenu">
-									<a href="welcome/halaman/31.html">
+									<a href="#">
 										Dosen Prodi</a>
-
 									<ul class="dropdown-menu">
-										<li><a href="welcome/halaman/82.html">Setia Rahmawan, M.Pd.</a></li>
-										<li><a href="welcome/halaman/75.html">Retno Aliyatul Fikroh, M.Sc</a></li>
-										<li><a href="welcome/halaman/76.html">Laily Nailul Muna, M.Sc., Apt</a></li>
-										<li><a href="welcome/halaman/39.html">Asih Widi Wisudawati, M.Pd</a></li>
-										<li><a href="welcome/halaman/38.html">Jamil Suprihatiningrum, PhD</a></li>
-										<li><a href="welcome/halaman/37.html">Khamidinal, M.Si</a></li>
-										<li><a href="welcome/halaman/35.html">Agus Kamaludin, M.Pd</a></li>
-										<li><a href="welcome/halaman/83.html">Muhammad Zamhari, S.Pd.Si., M.Sc</a></li>
-										<li><a href="welcome/halaman/40.html">Nina Hamidah, S.Si, M.A. M.Sc</a></li>
+										<?php foreach ($lecturers as $key => $lecturer) : ?>
+											<li><a href="<?= base_url('/landing/lecturer-view/'.$lecturer['id']) ?>"><?= $lecturer['name'] ?></a></li>
+										<?php endforeach; ?>
 									</ul>
 								</li>
 								<li class="dropdown-submenu">
@@ -99,113 +92,76 @@
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">PERKULIAHAN <span class="caret"></span></a>
 							<ul class="dropdown-menu listss71">
-								<li><a href="http://pkim.uin-suka.ac.id/id/page/pedoman_akademik/1">Pedoman Akademik</a></li>
-								<li><a href="http://pkim.uin-suka.ac.id/id/page/kalender">Kalender Akademik</a></li>
-								<li><a href="http://pkim.uin-suka.ac.id/id/page/jadwal_ujian">Jadwal Ujian</a></li>
-								<li><a href="http://pkim.uin-suka.ac.id/id/page/jadwal_kuliah">Jadwal Kuliah</a></li>
-								<li><a href="http://pkim.uin-suka.ac.id/id/page/kurikulum">Kurikulum</a></li>
+								<li><a href="<?= $studies[19]['description']?>">Pedoman Akademik</a></li>
+								<li><a href="<?= $studies[18]['description']?>">Kalender Akademik</a></li>
+								<li><a href="<?= $studies[17]['description']?>">Jadwal Ujian</a></li>
+								<li><a href="<?= $studies[16]['description']?>">Jadwal Kuliah</a></li>
+								<li><a href="<?= $studies[15]['description']?>">Kurikulum</a></li>
 								<li class="dropdown-submenu">
-									<a href="welcome/halaman/86.html">
-										RPS 2021</a>
-
-									<ul class="dropdown-menu">
-										<li class="dropdown-submenu">
-											<a href="welcome/halaman/88.html">
-												RPS Genap 2021</a>
-
-											<ul class="dropdown-menu">
-												<li><a href="welcome/halaman/90.html">
-														Sem_2</a></li>
-												<li><a href="welcome/halaman/92.html">
-														Sem_4</a></li>
-												<li><a href="welcome/halaman/94.html">
-														Sem_6</a></li>
-												<li><a href="welcome/halaman/96.html">
-														Sem_8</a></li>
-											</ul>
-										</li>
-										<li class="dropdown-submenu">
-											<a href="welcome/halaman/87.html">
-												RPS Gasal 2021</a>
-
-											<ul class="dropdown-menu">
-												<li><a href="welcome/halaman/89.html">
-														Sem_1</a></li>
-												<li><a href="welcome/halaman/91.html">
-														Sem_3</a></li>
-												<li><a href="welcome/halaman/93.html">
-														Sem_5</a></li>
-												<li><a href="welcome/halaman/95.html">
-														Sem_7</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="welcome/halaman/17.html">
+									<a href="#">
 										PPM</a>
 
 									<ul class="dropdown-menu">
-										<li><a href="https://drive.google.com/file/d/1ZZVx3Yg-Yz2udb-rIRFdBnYjv-qLCmD2/view">Modul PPM</a></li>
+										<li><a href="<?= $studies[10]['description']?>">Modul PPM</a></li>
 										<li class="dropdown-submenu">
-											<a href="welcome/halaman/59.html">
+											<a href="#">
 												Video PPM</a>
 
 											<ul class="dropdown-menu">
-												<li><a href="welcome/halaman/60.html">
+												<li><a href="<?= base_url('/landing/').$studies[11]['slug']?>">
 														Kelas X</a></li>
-												<li><a href="welcome/halaman/61.html">
+												<li><a href="<?= base_url('/landing/').$studies[12]['slug']?>">
 														Kelas XI</a></li>
-												<li><a href="welcome/halaman/62.html">
+												<li><a href="<?= base_url('/landing/').$studies[13]['slug']?>">
 														Kelas XII</a></li>
 											</ul>
 										</li>
 									</ul>
 								</li>
 								<li class="dropdown-submenu">
-									<a href="welcome/halaman/18.html">
+									<a href="#">
 										PLP</a>
 
 									<ul class="dropdown-menu">
-										<li><a href="https://drive.google.com/file/d/1Y5fvPC-zaL4Wy5rrPsBmdmjD_lr3j9oV/view">Modul PLP</a></li>
+										<li><a href="<?= $studies[14]['description']?>">Modul PLP</a></li>
 									</ul>
 								</li>
 								<li class="dropdown-submenu">
-									<a href="welcome/halaman/10.html">
+									<a href="#">
 										RPS</a>
 
 									<ul class="dropdown-menu">
 										<li class="dropdown-submenu">
-											<a href="welcome/halaman/12.html">
+											<a href="#">
 												RPS Semester Gasal</a>
 
 											<ul class="dropdown-menu">
-												<li><a href="welcome/halaman/65.html">
+												<li><a href="<?= base_url('/landing/').$studies[1]['slug']?>">
 														Semester 1</a></li>
-												<li><a href="welcome/halaman/23.html">
+												<li><a href="<?= base_url('/landing/').$studies[3]['slug']?>">
 														Semester 3</a></li>
-												<li><a href="welcome/halaman/27.html">
-														Semester 7</a></li>
-												<li><a href="welcome/halaman/25.html">
+												<li><a href="<?= base_url('/landing/').$studies[5]['slug']?>">
 														Semester 5</a></li>
+												<li><a href="<?= base_url('/landing/').$studies[7]['slug']?>">
+														Semester 7</a></li>
 											</ul>
 										</li>
 										<li class="dropdown-submenu">
-											<a href="welcome/halaman/13.html">
+											<a href="#">
 												RPS Semester Genap</a>
 
 											<ul class="dropdown-menu">
-												<li><a href="welcome/halaman/22.html">
+												<li><a href="<?= base_url('/landing/').$studies[2]['slug']?>">
 														Semester 2</a></li>
-												<li><a href="welcome/halaman/24.html">
+												<li><a href="<?= base_url('/landing/').$studies[4]['slug']?>">
 														Semester 4</a></li>
-												<li><a href="welcome/halaman/26.html">
+												<li><a href="<?= base_url('/landing/').$studies[6]['slug']?>">
 														Semester 6</a></li>
-												<li><a href="welcome/halaman/28.html">
+												<li><a href="<?= base_url('/landing/').$studies[8]['slug']?>">
 														Semester 8</a></li>
 											</ul>
 										</li>
-										<li><a href="welcome/halaman/14.html">RPS Mata Kuliah Pilihan</a></li>
+										<li><a href="<?= base_url('/landing/').$studies[9]['slug']?>">RPS Mata Kuliah Pilihan</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -242,7 +198,7 @@
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">TRACER STUDY <span class="caret"></span></a>
 							<ul class="dropdown-menu listss74">
-								<li><a href="welcome/alumni.html">Alumni PKIM</a></li>
+								<li><a href="<?= base_url('landing/alumni') ?>">Alumni PFIS</a></li>
 								<li><a href="https://docs.google.com/forms/d/1uqgUJ-paOflhjInvuZJiouEJMAcl5KpV3jCBwrwiN2E/edit?usp=sharing">Aduan Mahasiswa</a></li>
 								<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc6scoYeuzxO45lCDbja42GkZB0N7pnbAgpCF-hd3tTT2h2fQ/viewform?usp=sf_link">Survei Kepuasan mahasiswa</a></li>
 								<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdp5vBnyF5NZ-864FWBflIBgS1Zs2ddOAtV0hxY_xA-fnOKug/viewform">Tracer Pengguna Alumni</a></li>

@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class DosenModel extends App_Model
+class LaboratoryModel extends App_Model
 {
-    protected $table = 'ref_dosens';
+    protected $table = 'ref_contents';
 
     public function __construct()
     {
@@ -24,7 +24,7 @@ class DosenModel extends App_Model
             $this->table . '.*',
         ])
             ->from($this->table)
-            ->order_by($this->id, 'desc');
+            ->where($this->table.'.type', 'laboratory');
 
         return $baseQuery;
     }

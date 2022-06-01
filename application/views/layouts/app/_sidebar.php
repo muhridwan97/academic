@@ -127,6 +127,13 @@ $segment3 = $this->uri->segment(3);
 			</a>
 		</li>
 
+		<li class="nav-item<?= $segment1 == 'alumni' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('alumni') ?>">
+				<i class="mdi mdi-book-multiple menu-icon"></i>
+				<span class="menu-title">Alumni</span>
+			</a>
+		</li>
+
 		<li class="nav-title">HEADER MENU<i class="mdi mdi-arrow-right ml-auto"></i></li>
 		<li class="nav-item<?= $segment1 == 'identity' ? ' active' : '' ?>">
 			<a class="nav-link" href="<?= base_url('identity') ?>">
@@ -142,15 +149,40 @@ $segment3 = $this->uri->segment(3);
 			</a>
 		</li>
 
-		<!-- <li class="nav-item<?= $segment1 == 'dosen' ? ' active' : '' ?>">
-			<a class="nav-link" href="<?= base_url('dosen') ?>">
+		<li class="nav-item<?= $segment1 == 'study' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('study') ?>">
 				<i class="mdi mdi-puzzle menu-icon"></i>
-				<span class="menu-title">Dosen</span>
+				<span class="menu-title">Study</span>
 			</a>
-		</li> -->
+		</li>
 
 		
+		<li class="nav-item<?= $segment1 == 'journal' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('journal') ?>">
+				<i class="mdi mdi-puzzle menu-icon"></i>
+				<span class="menu-title">Journal</span>
+			</a>
+		</li>
+		
+		<li class="nav-item<?= $segment1 == 'laboratory' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('laboratory') ?>">
+				<i class="mdi mdi-puzzle menu-icon"></i>
+				<span class="menu-title">Laboratory</span>
+			</a>
+		</li>
 
+		<li class="nav-item<?= $segment1 == 'tracer_study' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('tracer_study') ?>">
+				<i class="mdi mdi-puzzle menu-icon"></i>
+				<span class="menu-title">Tracer Study</span>
+			</a>
+		</li>
+		<li class="nav-item<?= $segment1 == 'document' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('document') ?>">
+				<i class="mdi mdi-puzzle menu-icon"></i>
+				<span class="menu-title">Document</span>
+			</a>
+		</li>
 		<?php if (AuthorizationModel::isAuthorized(PERMISSION_ACCOUNT_EDIT)) : ?>
 			<li class="nav-title">ACCOUNT & SETTING <i class="mdi mdi-arrow-right ml-auto"></i></li>
 			<li class="nav-item<?= $segment1 == 'account' ? ' active' : '' ?>">

@@ -59,6 +59,21 @@
 <!-- Page Content -->
 
 <?php $data['identities'] = $this->identity->getAll();?>
+<?php $data['lecturers'] = $this->lecturer->getAll();?>
+<?php $data['postPopulars'] = $this->reviewCurriculum->getAll([
+    'order_method' => 'desc',
+    'sort_by' => 'count_view',
+    'limit' => 2,
+]);
+?>
+<?php $data['studies'] = $this->study->getAll();
+$data['studies'] = array_column($data['studies'], null, 'id');
+
+$data['journals'] = array_column($this->journal->getAll(), null, 'id');
+$data['laboratories'] = array_column($this->laboratory->getAll(), null, 'id');
+$data['tracerStudies'] = array_column($this->tracerStudy->getAll(), null, 'id');
+$data['documents'] = array_column($this->document->getAll(), null, 'id');?>
+
 <?php $this->load->view('layouts/landing/_header', $data) ?>
 
 <?php $this->load->view('partials/_alert') ?>

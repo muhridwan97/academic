@@ -31,8 +31,7 @@ class ReviewCurriculumModel extends App_Model
             'user.name AS writer_name',
         ])
             ->from($this->table)
-            ->join($this->tableUser . ' as user', 'user.id = ' . $this->table . '.writed_by', 'left')
-            ->order_by($this->table. '.id', 'desc');
+            ->join($this->tableUser . ' as user', 'user.id = ' . $this->table . '.writed_by', 'left');
 
         return $baseQuery;
     }
@@ -44,5 +43,22 @@ class ReviewCurriculumModel extends App_Model
                 ->where($this->table . '.is_deleted', false)
                 ->limit($limit, $start)->get()->result_array();
         return $query;
+    }
+
+    /**
+     * Update model.
+     *
+     * @param $data
+     * @param $id
+     * @return bool
+     */
+    public function updating($data, $id)
+    {
+        $condition = is_null($id) ? null : [$this->id => $id];
+        if (is_array($id)) {
+            $condition = $id;
+        }
+
+        return $this->db->update($this->table, $data, $condition);
     }
 }

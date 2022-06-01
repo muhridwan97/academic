@@ -2,9 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Class Dosen
+ * Class Journal
  * @property LecturerModel $lecturer
- * @property DosenModel $dosen
+ * @property JournalModel $journal
  * @property StudentModel $student
  * @property StatusHistoryModel $statusHistory
  * @property DepartmentModel $department
@@ -13,12 +13,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Mailer $mailer
  * @property Uploader $uploader
  */
-class Dosen extends App_Controller
+class Journal extends App_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('DosenModel', 'dosen');
+        $this->load->model('JournalModel', 'journal');
         $this->load->model('StudentModel', 'student');
         $this->load->model('LecturerModel', 'lecturer');
         $this->load->model('StatusHistoryModel', 'statusHistory');
@@ -34,11 +34,11 @@ class Dosen extends App_Controller
     }
 
     /**
-     * Show Dosen index page.
+     * Show Journal index page.
      */
     public function index()
     {
-        AuthorizationModel::mustAuthorized(PERMISSION_DOSEN_VIEW);
+        AuthorizationModel::mustAuthorized(PERMISSION_CONTENT_VIEW);
 
         $filters = array_merge($_GET, ['page' => get_url_param('page', 1)]);
 
@@ -52,13 +52,13 @@ class Dosen extends App_Controller
         }else if($civitasType == "MAHASISWA"){
             $filters['mahasiswa'] = $civitasLoggedIn;
         }
-        $dosens = $this->dosen->getAll($filters);
+        $journals = $this->journal->getAll($filters);
 
         if ($export) {
-            $this->exporter->exportFromArray('dosen', $dosens);
+            $this->exporter->exportFromArray('journal', $journals);
         }
 
-        $this->render('dosen/index', compact('dosens'));
+        $this->render('journal/index', compact('journals'));
     }
 
     /**
@@ -68,32 +68,32 @@ class Dosen extends App_Controller
      */
     public function view($id)
     {
-        AuthorizationModel::mustAuthorized(PERMISSION_DOSEN_VIEW);
+        AuthorizationModel::mustAuthorized(PERMISSION_CONTENT_VIEW);
 
-        $dosen = $this->dosen->getById($id);
+        $journal = $this->journal->getById($id);
 
-        $this->render('dosen/view', compact('dosen'));
+        $this->render('journal/view', compact('journal'));
     }
     /**
-     * Show edit Dosen form.
+     * Show edit Journal form.
      * @param $id
      */
     public function edit($id)
     {
-        AuthorizationModel::mustAuthorized(PERMISSION_DOSEN_EDIT);
+        AuthorizationModel::mustAuthorized(PERMISSION_CONTENT_EDIT);
 
-        $dosen = $this->dosen->getById($id);
+        $journal = $this->journal->getById($id);
 
-        $this->render('dosen/edit', compact('dosen'));
+        $this->render('journal/edit', compact('journal'));
     }
 
     /**
-     * Save new Dosen data.
+     * Save new Journal data.
      * @param $id
      */
     public function update($id)
     {
-        AuthorizationModel::mustAuthorized(PERMISSION_DOSEN_EDIT);
+        AuthorizationModel::mustAuthorized(PERMISSION_CONTENT_EDIT);
 
         if ($this->validate($this->_validation_rules($id))) {
             if ($this->input->post('is_link')) {
@@ -104,17 +104,17 @@ class Dosen extends App_Controller
                 $description = $this->input->post('description');
             }
             
-            $dosen = $this->dosen->getById($id);
+            $journal = $this->journal->getById($id);
 
-            $save = $this->dosen->update([
+            $save = $this->journal->update([
                 'name' => $name,
                 'description' => $description,
             ], $id);
 
             if ($save) {
-                flash('success', "Dosen {$dosen['lecturer_name']} successfully updated", 'dosen');
+                flash('success', "Journal {$journal['lecturer_name']} successfully updated", 'journal');
             } else {
-                flash('danger', "Update Dosen failed, try again of contact administrator");
+                flash('danger', "Update Journal failed, try again of contact administrator");
             }
         }
         $this->edit($id);

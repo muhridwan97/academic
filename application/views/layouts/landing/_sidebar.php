@@ -15,7 +15,9 @@ $segment2 = $this->uri->segment(2);
 
 		<div id="post-populer-sidebar">
 			<ul id="post-populer-sidebar-list">
-				<li><a href="../../single/Review-Kurikulum-Dalam-Rangka-Pengembangan-Program-Studi-ke-Arah-Internasional2019-04-1213-01-48.html"><span class="glyphicon glyphicon-file" style="margin-right:5px"></span>Review Kurikulum Dalam Rangka Pengembangan Program Studi ke Arah Internasional</a></li>
+				<?php foreach ($postPopulars as $key => $post) : ?>
+				<li><a href="<?= base_url('landing/review-curriculum-view/'.$post['id'])?>"><span class="glyphicon glyphicon-file" style="margin-right:5px"></span><?= $post['title'] ?></a></li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 	</div>

@@ -237,3 +237,16 @@ if (!function_exists('asset_url')) {
         return rtrim(env('S3_ENDPOINT'), '/') . '/' . $bucket . '/' . $key;
     }
 }
+
+if (!function_exists('letter_url')) {
+    /**
+     * Get single sign on url.
+     *
+     * @param string $uri
+     * @return string
+     */
+    function letter_url($uri = '')
+    {
+        return rtrim(env('LETTER_URL'), '/') . '/' . $uri;
+    }
+}

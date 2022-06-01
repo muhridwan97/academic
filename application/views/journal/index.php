@@ -1,7 +1,7 @@
 <div class="card mb-3">
     <div class="card-body">
         <div class="d-sm-flex justify-content-between">
-            <h5 class="card-title mb-sm-0">Data Dosen</h5>
+            <h5 class="card-title mb-sm-0">Data Journal</h5>
             <div>
                 <a href="#modal-filter" data-toggle="modal" class="btn btn-info btn-sm pr-2 pl-2">
                     <i class="mdi mdi-filter-variant"></i>
@@ -11,8 +11,8 @@
                 </a>
             </div>
         </div>
-        <div class="<?= $dosens['total_data'] > 3 ? 'table-responsive' : '' ?>">
-            <table class="table table-hover table-sm mt-3 responsive" id="table-dosen">
+        <div class="<?= $journals['total_data'] > 3 ? 'table-responsive' : '' ?>">
+            <table class="table table-hover table-sm mt-3 responsive" id="table-journal">
                 <thead>
                 <tr>
                     <th class="text-md-center" style="width: 60px">No</th>
@@ -24,13 +24,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php $no = isset($dosens) ? ($dosens['current_page'] - 1) * $dosens['per_page'] : 0 ?>
-                <?php foreach ($dosens['data'] as $dosen): ?>
+                <?php $no = isset($journals) ? ($journals['current_page'] - 1) * $journals['per_page'] : 0 ?>
+                <?php foreach ($journals['data'] as $journal): ?>
                     <tr>
                         <td class="text-md-center"><?= ++$no ?></td>
-                        <td><?= $dosen['name'] ?></td>
-                        <td><?= $dosen['slug'] ?></td>
-                        <td><?php if($dosen['is_link']):?>
+                        <td><?= $journal['name'] ?></td>
+                        <td><?= $journal['slug'] ?></td>
+                        <td><?php if($journal['is_link']):?>
                             <label class="badge badge-success">
                                 YES
                             </label>
@@ -40,22 +40,17 @@
                             </label>
                             <?php endif; ?>
                         </td>
-                        <td><?= $dosen['description'] ?></td>
+                        <td><?= $journal['description'] ?></td>
                         <td class="text-md-right">
                             <div class="dropdown">
                                 <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="actionButton" data-toggle="dropdown">
                                     Action
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-right row-dosen"
-                                     data-id="<?= $dosen['id'] ?>"
-                                     data-label="<?= $dosen['name'] ?>">
-                                    <?php if(AuthorizationModel::isAuthorized(PERMISSION_DOSEN_VIEW)): ?>
-                                        <a class="dropdown-item" href="<?= site_url('dosen/view/' . $dosen['id']) ?>">
-                                            <i class="mdi mdi-eye-outline mr-2"></i> View
-                                        </a>
-                                    <?php endif; ?>
-                                    <?php if(AuthorizationModel::isAuthorized(PERMISSION_DOSEN_EDIT)): ?>
-                                        <a class="dropdown-item" href="<?= site_url('dosen/edit/' . $dosen['id']) ?>">
+                                <div class="dropdown-menu dropdown-menu-right row-journal"
+                                     data-id="<?= $journal['id'] ?>"
+                                     data-label="<?= $journal['name'] ?>">
+                                    <?php if(AuthorizationModel::isAuthorized(PERMISSION_CONTENT_EDIT)): ?>
+                                        <a class="dropdown-item" href="<?= site_url('journal/edit/' . $journal['id']) ?>">
                                             <i class="mdi mdi-square-edit-outline mr-2"></i> Edit
                                         </a>
                                     <?php endif; ?>
@@ -64,16 +59,16 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
-                <?php if(empty($dosens['data'])): ?>
+                <?php if(empty($journals['data'])): ?>
                     <tr>
-                        <td colspan="6">No dosens data available</td>
+                        <td colspan="6">No journals data available</td>
                     </tr>
                 <?php endif; ?>
                 </tbody>
             </table>
         </div>
-        <?php $this->load->view('partials/_pagination', ['pagination' => $dosens]) ?>
+        <?php $this->load->view('partials/_pagination', ['pagination' => $journals]) ?>
     </div>
 </div>
 
-<?php $this->load->view('dosen/_modal_filter') ?>
+<?php $this->load->view('journal/_modal_filter') ?>
