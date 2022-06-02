@@ -4,8 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * @property LecturerModel $lecturer
  * @property StudentModel $student
- * @property LessonModel $lesson
- * @property LetterNumberModel $letterNumber
+ * @property ResearchModel $research
+ * @property DevotionModel $devotion
  * @property ExamExerciseModel $examExercise
  * Class Dashboard
  */
@@ -19,6 +19,8 @@ class Dashboard extends App_Controller
 		parent::__construct();
 		$this->load->model('LecturerModel', 'lecturer');
 		$this->load->model('StudentModel', 'student');
+		$this->load->model('ResearchModel', 'research');
+		$this->load->model('DevotionModel', 'devotion');
 	}
 
 	/**
@@ -29,8 +31,8 @@ class Dashboard extends App_Controller
 		$data = [
 			'totalLecturer' => $this->lecturer->getBy([], 'COUNT'),
 			'totalStudent' => $this->student->getBy([], 'COUNT'),
-			'totalLesson' => [],
-			'totalLetterNumber' => [],
+			'totalResearch' => $this->research->getBy([], 'COUNT'),
+			'totalDevotion' => $this->devotion->getBy([], 'COUNT'),
 		];
 
 		$data['latestExams'] =  [];
