@@ -11,7 +11,7 @@
 	<div class="detail-post">
 		<p class="date-post">
 			<span class="glyphicon glyphicon-dashboard" style="margin-right:5px;color:rgb(28, 71, 128)"></span><b>Tanggal :</b>
-			<span class="text-date-post"><?= format_date($reviewCurriculum['title'], 'd F Y') ?></span>
+			<span class="text-date-post"><?= format_date($reviewCurriculum['date'], 'd F Y') ?></span>
 		</p>
 		<p class="created-post" style="margin-right:10px">
 			<span class="glyphicon glyphicon-user" style="margin-right:5px;color:rgb(28, 71, 128)"></span><b>Ditulis oleh : </b>
