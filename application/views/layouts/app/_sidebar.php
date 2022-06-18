@@ -148,7 +148,7 @@ $segment3 = $this->uri->segment(3);
 			</a>
 		</li>
 
-		<li class="nav-title">HEADER MENU<i class="mdi mdi-arrow-right ml-auto"></i></li>
+		<li class="nav-title">PAGE MENU<i class="mdi mdi-arrow-right ml-auto"></i></li>
 
 		<?php if (AuthorizationModel::isAuthorized(PERMISSION_PAGE_VIEW)) : ?>
 		<li class="nav-item<?= $segment1 == 'page' ? ' active' : '' ?>">
@@ -166,7 +166,7 @@ $segment3 = $this->uri->segment(3);
 				<span class="menu-title">Blog</span>
 			</a>
 		</li>		
-		<?php endif; ?>
+		<!-- <?php endif; ?>
 
 		<li class="nav-item<?= $segment1 == 'identity' ? ' active' : '' ?>">
 			<a class="nav-link" href="<?= base_url('identity') ?>">
@@ -215,7 +215,7 @@ $segment3 = $this->uri->segment(3);
 				<i class="mdi mdi-puzzle menu-icon"></i>
 				<span class="menu-title">Document</span>
 			</a>
-		</li>
+		</li> -->
 		<?php if (AuthorizationModel::isAuthorized(PERMISSION_ACCOUNT_EDIT)) : ?>
 			<li class="nav-title">ACCOUNT & SETTING <i class="mdi mdi-arrow-right ml-auto"></i></li>
 			<li class="nav-item<?= $segment1 == 'account' ? ' active' : '' ?>">
