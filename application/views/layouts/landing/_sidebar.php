@@ -16,7 +16,7 @@ $segment2 = $this->uri->segment(2);
 		<div id="post-populer-sidebar">
 			<ul id="post-populer-sidebar-list">
 				<?php foreach ($postPopulars as $key => $post) : ?>
-				<li><a href="<?= base_url('landing/review-curriculum-view/'.$post['id'])?>"><span class="glyphicon glyphicon-file" style="margin-right:5px"></span><?= $post['title'] ?></a></li>
+				<li><a href="<?= base_url('landing/blog-view/'.$post['id'])?>"><span class="glyphicon glyphicon-file" style="margin-right:5px"></span><?= $post['title'] ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>

@@ -152,7 +152,7 @@
 					<div class="entry-month">
 					<?= format_date($post['date'], 'Y') ?> </div>
 				</div>
-				<a href="single/Review-Kurikulum-Dalam-Rangka-Pengembangan-Program-Studi-ke-Arah-Internasional2019-04-1213-01-48.html">
+				<a href="<?= base_url('landing/blog-view/'.$post['id'])?>">
 					<h3 class="title-post-popular" style="margin-top:0px"><?= $post['title'] ?></h3>
 				</a>
 				<h6 style="color:#555;font-family: myf">Penulis : <b><?= $post['writer_name'] ?></b></h6>
@@ -169,7 +169,7 @@
 			<div id="post-populer-sidebar">
 				<ul id="post-populer-sidebar-list">
 					<?php foreach ($postPopulars as $key => $post) : ?>
-					<li><a href="<?= base_url('landing/review-curriculum-view/'.$post['id'])?>"><span class="glyphicon glyphicon-file" style="margin-right:5px"></span><?= $post['title'] ?></a></li>
+					<li><a href="<?= base_url('landing/blog-view/'.$post['id'])?>"><span class="glyphicon glyphicon-file" style="margin-right:5px"></span><?= $post['title'] ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 			</div>

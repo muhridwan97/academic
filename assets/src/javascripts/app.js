@@ -61,6 +61,9 @@ try {
     if ($('#form-research').length) {
         import("./pages/research").then(research => research.default());
     }
+    if ($('#form-menu').length) {
+        import("./pages/menu").then(menu => menu.default());
+    }
 
 } catch (e) {
     console.log(e);

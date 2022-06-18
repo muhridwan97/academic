@@ -48,7 +48,51 @@
 					<ul class="nav navbar-nav navbar-left menu-nav-bottom">
 						<li><a href="http://pfis.uin-suka.ac.id/"><i class="glyphicon glyphicon-home" style="margin-right:5px"></i>Home</a> </li>
 
-						<li>
+						<?php
+						function doOutputList($treeMenu, $deep = 0)
+						{
+							$padding = str_repeat('  ', $deep * 3);
+
+							if ($deep != 0) {
+								echo '<ul class="dropdown-menu">';
+							}
+							foreach ($treeMenu as $arr) {
+								if ($deep == 0) {
+									echo '<li>';
+								}else{
+									if(isset($arr['sub_menu'])){
+										echo '<li class="dropdown-submenu">';
+									}else{
+										echo '<li>';
+									}
+								}
+								if (isset($arr['sub_menu'])) {
+									if ($deep != 0) {
+										echo '<a href="'.$arr['url'].'">' . $arr['menu_name'] . '</a>';
+									} else {
+										echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">' . $arr['menu_name'] . ' <span class="caret"></span></a>';
+									}
+
+									// echo $padding .'    '. $arr['menu_name'];
+									doOutputList($arr['sub_menu'], $deep + 1);
+								} else {
+									if ($deep != 0) {
+										echo '<a href="'.$arr['url'].'">' . $arr['menu_name'] . '</a>';
+									} else {
+										echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">' . $arr['menu_name'] . ' <span class="caret"></span></a>';
+									}
+									// echo $padding .'    '. $arr['menu_name'];
+								}
+								echo "</li>";
+							}
+							if ($deep != 0) {
+								echo "</ul>";
+							}
+						}
+
+						doOutputList($treeMenu);
+						?>
+						<!-- <li>
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">IDENTITAS <span class="caret"></span></a>
 							<ul class="dropdown-menu listss69">
 								<?php foreach ($identities as $key => $identity) : ?>
@@ -212,7 +256,7 @@
 							<ul class="dropdown-menu listss75">
 								<li><a href="<?= base_url('landing/content/'.$documents[11]['slug']) ?>"><?= $documents[11]['name'] ?></a></li>
 							</ul>
-						</li>
+						</li> -->
 
 					</ul>
 				</div>

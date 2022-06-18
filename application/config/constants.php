@@ -170,6 +170,33 @@ defined('PERMISSION_ALUMNI_CREATE') OR define('PERMISSION_ALUMNI_CREATE', 'alumn
 defined('PERMISSION_ALUMNI_EDIT') OR define('PERMISSION_ALUMNI_EDIT', 'alumni-edit');
 defined('PERMISSION_ALUMNI_DELETE') OR define('PERMISSION_ALUMNI_DELETE', 'alumni-delete');
 
+// Menu permission
+defined('PERMISSION_MENU_VIEW') OR define('PERMISSION_MENU_VIEW', 'menu-view');
+defined('PERMISSION_MENU_CREATE') OR define('PERMISSION_MENU_CREATE', 'menu-create');
+defined('PERMISSION_MENU_EDIT') OR define('PERMISSION_MENU_EDIT', 'menu-edit');
+defined('PERMISSION_MENU_DELETE') OR define('PERMISSION_MENU_DELETE', 'menu-delete');
+
+// Page permission
+defined('PERMISSION_PAGE_VIEW') OR define('PERMISSION_PAGE_VIEW', 'page-view');
+defined('PERMISSION_PAGE_CREATE') OR define('PERMISSION_PAGE_CREATE', 'page-create');
+defined('PERMISSION_PAGE_EDIT') OR define('PERMISSION_PAGE_EDIT', 'page-edit');
+defined('PERMISSION_PAGE_DELETE') OR define('PERMISSION_PAGE_DELETE', 'page-delete');
+defined('PERMISSION_PAGE_MANAGE') OR define('PERMISSION_PAGE_MANAGE', 'page-manage');
+
+// Blog permission
+defined('PERMISSION_BLOG_VIEW') OR define('PERMISSION_BLOG_VIEW', 'blog-view');
+defined('PERMISSION_BLOG_CREATE') OR define('PERMISSION_BLOG_CREATE', 'blog-create');
+defined('PERMISSION_BLOG_EDIT') OR define('PERMISSION_BLOG_EDIT', 'blog-edit');
+defined('PERMISSION_BLOG_DELETE') OR define('PERMISSION_BLOG_DELETE', 'blog-delete');
+defined('PERMISSION_BLOG_MANAGE') OR define('PERMISSION_BLOG_MANAGE', 'blog-manage');
+
+// Category permission
+defined('PERMISSION_CATEGORY_VIEW') OR define('PERMISSION_CATEGORY_VIEW', 'category-view');
+defined('PERMISSION_CATEGORY_CREATE') OR define('PERMISSION_CATEGORY_CREATE', 'category-create');
+defined('PERMISSION_CATEGORY_EDIT') OR define('PERMISSION_CATEGORY_EDIT', 'category-edit');
+defined('PERMISSION_CATEGORY_DELETE') OR define('PERMISSION_CATEGORY_DELETE', 'category-delete');
+defined('PERMISSION_CATEGORY_MANAGE') OR define('PERMISSION_CATEGORY_MANAGE', 'category-manage');
+
 // Training permission
 defined('PERMISSION_TRAINING_MANAGE') OR define('PERMISSION_TRAINING_MANAGE', 'training-manage');
 defined('PERMISSION_TRAINING_VIEW') OR define('PERMISSION_TRAINING_VIEW', 'training-view');

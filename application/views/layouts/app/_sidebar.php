@@ -84,13 +84,27 @@ $segment3 = $this->uri->segment(3);
 				</a>
 				<div class="collapse<?= $segment1 == 'master' && !in_array($segment2, ['role', 'user']) ? ' show' : '' ?>" id="master">
 					<ul class="nav flex-column sub-menu">
+						<?php if (AuthorizationModel::isAuthorized(PERMISSION_MENU_VIEW)) : ?>
+							<li class="nav-item<?= $segment1 == 'master' && $segment2 == 'menu' ? ' active' : '' ?>">
+								<a class="nav-link" href="<?= site_url('master/menu') ?>">
+									<i class="mdi mdi-apps mr-2"></i>Menu
+								</a>
+							</li>
+						<?php endif; ?>
+						<?php if (AuthorizationModel::isAuthorized(PERMISSION_CATEGORY_VIEW)) : ?>
+							<li class="nav-item<?= $segment1 == 'master' && $segment2 == 'category' ? ' active' : '' ?>">
+								<a class="nav-link" href="<?= site_url('master/category') ?>">
+									<i class="mdi mdi-tag-text-outline mr-2"></i>Category
+								</a>
+							</li>
+						<?php endif; ?>
 						<?php if (AuthorizationModel::isAuthorized(PERMISSION_LECTURER_VIEW)) : ?>
 							<li class="nav-item<?= $segment1 == 'master' && $segment2 == 'lecturer' ? ' active' : '' ?>">
 								<a class="nav-link" href="<?= site_url('master/lecturer') ?>">
 									<i class="mdi mdi-badge-account-horizontal-outline mr-2"></i>Lecturer
 									<?php if ($this->config->item('sso_enable')) : ?>
 										<span class="badge badge-info badge-pill ml-auto">
-											HR
+											LTR
 										</span>
 									<?php endif; ?>
 								</a>
@@ -102,7 +116,7 @@ $segment3 = $this->uri->segment(3);
 									<i class="mdi mdi-office-building-outline mr-2"></i>Student
 									<?php if ($this->config->item('sso_enable')) : ?>
 										<span class="badge badge-info badge-pill ml-auto">
-											HR
+											LTR
 										</span>
 									<?php endif; ?>
 								</a>
@@ -135,6 +149,25 @@ $segment3 = $this->uri->segment(3);
 		</li>
 
 		<li class="nav-title">HEADER MENU<i class="mdi mdi-arrow-right ml-auto"></i></li>
+
+		<?php if (AuthorizationModel::isAuthorized(PERMISSION_PAGE_VIEW)) : ?>
+		<li class="nav-item<?= $segment1 == 'page' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('/page') ?>">
+				<i class="mdi mdi-mail menu-icon"></i>
+				<span class="menu-title">Page</span>
+			</a>
+		</li>		
+		<?php endif; ?>
+
+		<?php if (AuthorizationModel::isAuthorized(PERMISSION_BLOG_VIEW)) : ?>
+		<li class="nav-item<?= $segment1 == 'blog' ? ' active' : '' ?>">
+			<a class="nav-link" href="<?= base_url('/blog') ?>">
+				<i class="mdi mdi-blogger menu-icon"></i>
+				<span class="menu-title">Blog</span>
+			</a>
+		</li>		
+		<?php endif; ?>
+
 		<li class="nav-item<?= $segment1 == 'identity' ? ' active' : '' ?>">
 			<a class="nav-link" href="<?= base_url('identity') ?>">
 				<i class="mdi mdi-puzzle menu-icon"></i>
