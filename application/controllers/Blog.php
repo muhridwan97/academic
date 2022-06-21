@@ -75,9 +75,9 @@ class Blog extends App_Controller
     {
         AuthorizationModel::mustAuthorized(PERMISSION_BLOG_VIEW);
 
-        $curriculum = $this->curriculum->getById($id);
+        $blog = $this->blog->getById($id);
 
-        $this->render('curriculum/view', compact('curriculum'));
+        $this->render('blog/view', compact('blog'));
     }
 
     /**
