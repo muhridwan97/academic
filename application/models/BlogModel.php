@@ -9,6 +9,8 @@ class BlogModel extends App_Model
 
     const STATUS_ACTIVE = 'ACTIVE';
     const STATUS_INACTIVE = 'INACTIVE';
+    const STATUS_PENDING = 'PENDING';
+    const STATUS_REJECTED = 'REJECTED';
 
     public function __construct()
     {
